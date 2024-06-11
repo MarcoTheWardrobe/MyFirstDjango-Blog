@@ -2,7 +2,17 @@
 <html>
     <title>MarcoTheWardrobe's Blog</title>
 <body>
-    <h1>Benvenuto nel blog</h1>
-    <p> mio nome è MarcoTheWardrobe</p>
+    <header>
+        <h1>MarcoTheWardrobe</h1>
+        <h4><a href="/">Chi sono?</a></h1>
+    </header>
+    
+{% for post in posts %}
+        <article>
+            <time>published: {{ post.published_date }}</time>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </article>
+    {% endfor %}
 </body>
 </html>
