@@ -12,6 +12,6 @@ urlpatterns = [
     path('test/', views.test_css, name='test_css'),
     path('test_pagina1/', views.test_pagina, name='test_pagina1'),
     path('final/', views.final, name='final'),
-     path('final_Eye/', views.final_Eye, name='final_Eye'),
+    path('final_Eye/', views.final_Eye, name='final_Eye'),
     
 ]
