@@ -1,0 +1,79 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>Final...</title>
+        <link rel="stylesheet" href="{% static 'css/final.css'%}?rnd={{rnd}}">
+        
+  
+    </head>
+
+
+    <body style="background-color: black;">
+
+    
+        <header style="padding-left: 755px;">
+
+           <a href="{% url 'final_Eye' %}"><h1 style="color: crimson;">[̲̅B][̲̅A][̲̅R][̲̅R][̲̅A][̲̅C][̲̅U][̲̅D][̲̅A]</h1></a> 
+
+        </header>
+
+
+        <main class="wrapper">
+
+
+            <div class="sfondo-box">
+
+                
+                <span id="eye-cont">
+                    <div class="pupil"></div>
+                    <img src="https://i.postimg.cc/fbShFrsP/a.jpg">  
+                </span>
+                
+            </div>
+
+            <div class="poem">
+
+
+                <pre style="color: crimson; float: left; font-size: larger;">
+                "In the shadows, 
+                    
+                my name is whispered by the cold eye that watches, 
+                
+                A haunting reminder of the darkness that I cannot escape."
+                </pre>
+
+
+            </div>
+
+        </main>
+
+
+
+        <footer>
+
+        </footer>
+
+
+        <script>
+// get both pupils
+const pupils = document.querySelectorAll("#eye-cont .pupil");
+window.addEventListener("mousemove", (e) => {
+  pupils.forEach((pupil) => {
+    // get x and y postion of cursor
+    const rect = pupil.getBoundingClientRect();
+    const x = (e.pageX - rect.left) / 70 + "px";
+    const y = (e.pageY - rect.top) / 50 + "px";
+    pupil.style.transform = "translate3d(" + x + "," + y + ", 0px)";
+  });
+});
+        </script>
+
+
+                    
+    </body>
+                
+</html>

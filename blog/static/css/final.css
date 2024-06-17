@@ -1,0 +1,61 @@
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-image:"https://img.freepik.com/free-photo/dark-grunge-style-scratched-metal-surface_1048-12951.jpg?w=900&t=st=1718619285~exp=1718619885~hmac=5074a037835c3f27583dc4842dc9c700489246b80b68d89516d4746711127298";
+    
+}
+
+.wrapper {
+    position: relative;
+  }
+  
+  .sfondo-box {
+    position: relative;
+    z-index: 1;
+   
+  }
+  .poem {
+    position: absolute;
+  z-index: 3; /* put .gold-box above .green-box and .dashed-box */
+  width: 80%;
+  left: 60px;
+  top: 300px;
+  float: right;
+  }
+
+ 
+ #eye-cont {
+    width: 480px;
+    display: block;
+    position: absolute;
+    left: 60%;
+    top: 100px;
+    
+ }
+ #eye-cont img {
+    width: 100%;
+ }
+
+
+  
+  .pupil {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: rgb(78, 3, 3);
+    z-index : 10;
+    top: calc(50% - 20px);
+    left: calc(50% - 10px);
+    bottom: calc(10% - 10px);
+
+   
+  }
+
+  a {
+    text-decoration: none;
+  }
+  
+  

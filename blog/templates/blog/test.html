@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chi sono?</title>
+    <link rel="stylesheet" href="{% static 'css/test.css' %}?rnd={{rnd}}">
+  
+</head>
+<body>
+
+    <header>
+    </header>
+    
+
+    <main>
+        <div id="content1"></div>
+	<div id="content2"></div>
+    </main>
+    
+    <p id="area">
+        <span class="bold italic underline">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</span>
+    </p>
+
+    
+    <footer>
+        <div id="chiSono">
+        <h2>Armadi Marco</h2>
+        <p>Via Testuggine 50</p>
+        <p>Cap: 200009</p>
+        <p>FAX: 234567876543456787</p>
+    </div>
+    <div id="links">
+        <h1>LINK UTILI:</h1>
+        <p><a href="{% url 'post_list' %}" class="top-menu">Il Mio Blog</a></p>
+        <p><a href="https://www.instagram.com" class="top-menu">Seguimi su Instagram!</a></p>
+        <p><a href="https://www.facebook.com/?locale=it_IT" class="top-menu">Seguimi su Facebook!</a></p>
+
+    </div>
+    </footer>
+
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SupMyN--ga</title>
+    <link rel="stylesheet" href="{% static 'css/pagina.css'%}?rnd={{rnd}}">
+  
+</head>
+<body>
+    
+    <header>
+        <div id="contenuto1"><a href="/"><h1>MarcoTheWardrobe</h1></a></div>
+        <div id="contenuto2"><h3>Temi | Video | Podcast | Articoli | Pratica</h3></div>
+        <div id="contenuto3"><h3>Login etc...</h3></div>
+    </header>
+
+    <main>
+        
+        <div class="spazio piccoli"><p>{% lorem %}</p>
+            <div>
+                <h3 style="float: right;"> <a href="{% url 'test_css' %}" id="a">Chi sono?</a></h3>
+            </div>
+        </div>
+        <div>
+        <div class="spazio medi" style=" float: left; width: 50%; box-sizing: border-box; padding-left: 400px;">
+
+             <h1 style="float: left; margin: 0px;  ">La scienza dell'Armadio</h1>
+             <h2 style="width: 350px;">Lorem ipsum dolor sit amet.</h2>
+             <p style="width: 350px;">{% lorem %}</p>
+
+        </div>
+        
+        <div class="spazio medi" style=" float: right; width: 50%; box-sizing: border-box; padding-left: 50px; margin: 0px;">
+            <img src="https://media.gettyimages.com/id/1350626586/it/foto/dressing-room-in-the-apartment.jpg?s=612x612&w=0&k=20&c=wySH6qrCKawz9lum5WrWdOLs3OygVZQhgGKmN7yg-uM=" width="400px" height="250px" style="padding-right: 300px;">
+        </div>
+    </div>
+        <div class="spazio grandi">
+        <div class="spazio medi">
+            <p style="padding: 0px; margin: 0px;">Ciao</p>
+            
+                <img src="https://i.sstatic.net/SBv4T.gif" height="300px" >
+           
+        </div>
+        <p>{% lorem %}</p>
+        </div>
+        
+
+        
+    </main>
+
+    <footer>
+        
+        
+        <button id="btn">WOoWO!!</button>
+          
+        
+    </footer>
+   
+
+ <script>
+   
+    var btn = document.getElementById( 'btn' );
+    var h2s = document.getElementsByClassName('spazio medi')
+
+btn.onclick = function() {
+    for(let i = 0; i<h2s.length; i++){
+        h2s[i].style.backgroundColor = 'red';
+    }
+};
+
+btn.onpointerenter =function(){
+        h2s[0].style.backgroundColor = 'red';
+        h2s[1].style.backgroundColor = 'yellow';
+        h2s[2].style.backgroundColor = 'green';
+
+};
+
+btn.onpointerleave = function(){
+    for(let i = 0; i<h2s.length; i++){
+        h2s[i].style.backgroundColor = 'aquamarine';
+    }
+};
+</script>
+
+
+</body>
+</html>

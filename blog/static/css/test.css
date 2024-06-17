@@ -1,0 +1,84 @@
+body {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+div {
+    margin: 0px;
+}
+
+header {
+    height: 200px;
+    background-color: blue;
+}
+
+#random {
+    height: 150px;
+    background-color: black;
+    float: left;
+    
+}
+
+footer {
+    height: 300px;
+    background-color: white;
+   
+}
+
+
+#content1 {
+	float: left;
+    height: 350px;
+	width: 34%;
+	background-color:pink;
+}
+#content2 {
+	float: right;
+    height: 350px;
+	width: 66%;
+	background-color: green;
+    
+}
+
+#area {
+    font-size: 18px;
+    height: 150px;
+    padding: 10px;
+    box-sizing: border-box;
+    float: left;
+}
+
+#chiSono {
+	float: left;
+    height: 350px;
+	width: 50%;
+
+
+}
+#links {
+	float: right;
+    height: 350px;
+	width: 50%;
+    
+   
+    
+}
+
+.bold {
+     font-weight: bold;
+
+}
+
+.italic {
+    font-style: italic;
+
+}
+
+.underline {
+
+text-decoration: underline;
+
+}
+
+
