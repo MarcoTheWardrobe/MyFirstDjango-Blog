@@ -81,11 +81,11 @@ def test_pagina(request):
    return render(request, 'blog/test_pagina1.html',
                  {"rnd":rnd})
 
-def final(request):
-    return render(request,'blog/final.html', 
+def final_test(request):
+    return render(request,'blog/final_test.html', 
                 {})
 
-def final_Eye(request):
+def final_eye(request):
     rnd = random_string(10)
-    return render(request,'blog/final_Eye.html', 
+    return render(request,'blog/final_eye.html', 
                 {"rnd":rnd})

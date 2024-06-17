@@ -11,7 +11,7 @@ urlpatterns = [
     path('post/<pk>/remove/', views.post_remove, name='post_remove'),
     path('test/', views.test_css, name='test_css'),
     path('test_pagina1/', views.test_pagina, name='test_pagina1'),
-    path('final/', views.final, name='final'),
-    path('final_Eye/', views.final_Eye, name='final_Eye'),
+    path('final_test/', views.final_test, name='final_test'),
+    path('final_eye/', views.final_eye, name='final_eye'),
     
 ]
