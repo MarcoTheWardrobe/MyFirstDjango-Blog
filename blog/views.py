@@ -82,8 +82,9 @@ def test_pagina(request):
                  {"rnd":rnd})
 
 def final_test(request):
-    return render(request,'blog/final_test.html', 
-                {})
+    rnd = random_string(10)
+    return render(request, 'blog/final_test.html',
+                 {"rnd":rnd})
 
 def final_eye(request):
     rnd = random_string(10)
