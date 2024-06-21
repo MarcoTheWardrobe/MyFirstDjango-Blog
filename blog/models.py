@@ -13,6 +13,8 @@ class Post(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 
+
+
     #Funzioni
 
     def publish(self):
@@ -21,4 +23,13 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+    
+   
 
+class ContactForm(models.Model):
+    nome = models.CharField(max_length=100)
+    cognome = models.CharField(max_length=100)
+    telefono = models.IntegerField()
+    email = models.EmailField(max_length=100)
+        
+        

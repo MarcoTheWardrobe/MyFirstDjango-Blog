@@ -3,20 +3,23 @@ from django.utils import timezone
 from blog.forms import PostForm 
 from .models import Post
 import string, random
+from django.http import HttpResponse, HttpResponseRedirect
+
+
+from .forms import Ni
+from django.http import HttpResponse
+from django.template import loader
+import json
+
+
+
 
 def random_string(length):
     pool = string.ascii_lowercase + string.digits
     return ''.join(random.choice(pool) for i in range(length))
 
  
-def random_color_generator():
-    r = random.randint(0, 255)
-    g = random.randint(0, 255)
-    b = random.randint(0, 255)
-    return (r, g, b)
- 
-random_color = random_color_generator()
-print(random_color)
+
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -82,11 +85,46 @@ def test_pagina(request):
                  {"rnd":rnd})
 
 def final_test(request):
+     
     rnd = random_string(10)
     return render(request, 'blog/final_test.html',
-                 {"rnd":rnd})
+            {"rnd":rnd})
 
 def final_eye(request):
     rnd = random_string(10)
     return render(request,'blog/final_eye.html', 
                 {"rnd":rnd})
+
+
+
+def get_form(request):
+    
+    form = Ni()
+
+    return render(request, "blog/form.html", {"form": form})
+
+
+def save_form(request):
+    context_json = {}
+    context_json["status"] = "error"
+    context_json["msg"] = "Errore Generico"
+    context_json["error_json"] = {}
+    if request.method != "POST":
+        return HttpResponse(json.dumps(context_json), content_type="application/json")
+    data = json.loads(request.body)
+    tform = Ni(data)
+    if not tform.is_valid():
+        print(tform.errors)
+        context_json["msg"] = "Errore Nei Dati"
+        return HttpResponse(json.dumps(context_json), content_type="application/json")
+    context_json["status"] = "success"
+    context_json["msg"] = "Salvato con successo"
+    return HttpResponse(json.dumps(context_json), content_type="application/json")
+
+
+
+        
+
+
+def hey_txt(request):
+    return render(request, "blog/hey.html", {})

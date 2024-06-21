@@ -52,14 +52,14 @@ footer {
 #chiSono {
 	float: left;
     height: 350px;
-	width: 50%;
+	width: 33,33%;
 
 
 }
 #links {
-	float: right;
+	float: left;
     height: 350px;
-	width: 50%;
+	width: 33,33%;
     
    
     
@@ -81,4 +81,10 @@ text-decoration: underline;
 
 }
 
-
+#contattami{
+    
+    height: 350px;
+	width: 33,33%;
+    
+    
+}

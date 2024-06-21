@@ -1,0 +1,123 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    
+    <form action="/final_test/" method='POST'> {% csrf_token %}
+        <fieldset style="width: 100px;">
+        <h1><em>CONTATTAMI:</em></h1>
+        {{ form }}
+        <input type="button" value="Submit" id="btn" />
+    </fieldset>
+    </form>
+
+    <div id="demo">
+        <h2>Look down...</h2>
+        <button type="button" onclick="loadDoc()">Change Content</button>
+        </div>
+        <div id="s">
+            </div>
+
+            <div style="padding-top: 1000px;"><a href="{% url 'final_test' %}">cliccami.</a></div>
+       
+<script>
+    document.getElementById("btn").addEventListener('click', function(event){
+    event.preventDefault();
+    const inputs = document.querySelectorAll('input')
+    console.log(inputs)
+    let payload = {};
+    for (const input of inputs) {
+        console.log(input)
+        const name = input.getAttribute('name')
+        if(name !== null && name !== "csrfmiddlewaretoken"){
+           payload[name]  = input.value;
+        } else {
+
+            console.log("Impossibile da gestire")
+
+        }
+       }
+       
+       console.log(payload);
+
+       fetch('/api/save-form/', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}',
+                },
+                body: JSON.stringify(payload)
+            })
+        .then(resp => resp.json())
+        .then(responseData => {
+            if (responseData.status == 'success' ) {
+                alert('Successo')
+            } else {
+                alert('Dati non corretti, si prega di verificare');
+                console.log(responseData.msg);
+                console.log(responseData.dj_errors);
+            }
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+    
+
+       
+    });
+ 
+
+
+
+       function loadDoc() {
+          const xhttp = new XMLHttpRequest();
+          xhttp.onload = function() {
+            document.getElementById("demo").innerHTML =
+            this.responseText;
+          }
+         
+
+                xhttp.open("GET", "/test_pagina1");
+                xhttp.send();
+
+
+        }
+/**        
+
+        function myDisplayer(some) {
+        document.getElementById("s").innerHTML = some;
+}
+
+let myPromise = new Promise(function(myResolve, myReject) {
+  let req = new XMLHttpRequest();
+  req.open('GET', "/hey");
+  req.onload = function() {
+    if (req.status == 200) {
+      myResolve(req.response);
+    } else {
+      myReject("File not Found");
+    }
+  };
+  req.send();
+});
+
+myPromise.then(
+  function(value) {myDisplayer(value);},
+  function(error) {myDisplayer(error);}
+);
+
+       **/
+
+   
+       
+    </script>
+
+
+</body>
+</html>
+

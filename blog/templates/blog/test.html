@@ -24,21 +24,31 @@
 
     
     <footer>
-        <div id="chiSono">
+        <div id="chiSono" style="padding-left: 100px;">
         <h2>Armadi Marco</h2>
         <p>Via Testuggine 50</p>
         <p>Cap: 200009</p>
         <p>FAX: 234567876543456787</p>
     </div>
-    <div id="links">
+    <div id="links" style="padding-left: 150px; padding-right: 400px;">
         <h1>LINK UTILI:</h1>
-        <p><a href="{% url 'post_list' %}" class="top-menu">Il Mio Blog</a></p>
-        <p><a href="https://www.instagram.com" class="top-menu">Seguimi su Instagram!</a></p>
-        <p><a href="https://www.facebook.com/?locale=it_IT" class="top-menu">Seguimi su Facebook!</a></p>
+        <p><a href="{% url 'post_list' %}" >Il Mio Blog</a></p>
+        <p><a href="https://www.instagram.com">Seguimi su Instagram!</a></p>
+        <p><a href="https://www.facebook.com/?locale=it_IT">Seguimi su Facebook!</a></p>
 
+    </div>
+    <div id="contatti" style="padding-left: 600px; box-sizing: border-box;">
+        <form action="/form/" method='POST'> {% csrf_token %}
+            <fieldset style="width: 100px;">
+            <h1><em>CONTATTAMI:</em></h1>
+            {{ form }}
+            <input type="submit" name="Invia">
+        </fieldset>
+        </form>
     </div>
     </footer>
 
+    
 
 </body>
 </html>

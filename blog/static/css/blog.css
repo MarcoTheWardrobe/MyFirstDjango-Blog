@@ -90,4 +90,8 @@ a:hover
 	text-decoration: underline;
 	color: #0080FF;
 }
-    
+
+#privacy{
+    font-style: italic;
+}
+

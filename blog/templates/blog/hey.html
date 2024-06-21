@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <body style="background-color: black;">
+       <div> <img src="" id="SUP" style="width: 50%; box-sizing: border-box; position: fixed;"></div>
+                  
+        <script>
+            let imageIndex = 0; 
+const imageUrls = [ 
+  "https://i.pinimg.com/474x/db/48/c5/db48c5ed37bd1a8569ca43ac60cebe0e.jpg",
+  "https://i.pinimg.com/564x/70/f2/0f/70f20f61a1070d80a41262548d7138bb.jpg",
+  "https://i.pinimg.com/736x/dd/b3/4c/ddb34c74c5fa7c3429c71a0ea5ec67f2.jpg",
+  "https://i.pinimg.com/564x/bf/e5/8b/bfe58b423d82afb40c7aab7e321cdd19.jpg",
+  "https://i.pinimg.com/564x/02/74/f5/0274f5e94b896c524ca981acb4f105dc.jpg",
+  "https://i.pinimg.com/564x/14/cb/2a/14cb2ae77969c7221e5b32f1fc6c5b35.jpg",
+  "https://i.pinimg.com/564x/ad/79/8e/ad798ea03cbabc7306101a9a8794e502.jpg",
+  "https://i.pinimg.com/564x/24/54/c7/2454c75d472cfffd07a55c8427a62f1d.jpg",
+  "https://i.pinimg.com/736x/ef/eb/04/efeb0495337462d266c7a73a2237357e.jpg",
+  "https://i.pinimg.com/564x/f8/12/c7/f812c7182397b3cd3a3a68e4b1fed71a.jpg",
+  "https://i.pinimg.com/564x/bc/b4/e7/bcb4e7b8f3db0479e640b7fb9585a52a.jpg",
+  "https://i.pinimg.com/564x/2d/d7/1c/2dd71cd26a137bf8003ccf6ec842af4b.jpg"
+
+
+];
+
+setInterval(function() {
+  myFunction();
+}, 400);
+
+function myFunction() {
+  let imagefive = document.getElementById("SUP");
+  imagefive.src = imageUrls[imageIndex]; 
+
+ 
+  imageIndex = (imageIndex + 1) % imageUrls.length;
+}
+        </script>
+    </body>
+</html>

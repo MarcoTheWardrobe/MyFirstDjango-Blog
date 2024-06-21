@@ -13,5 +13,8 @@ urlpatterns = [
     path('test_pagina1/', views.test_pagina, name='test_pagina1'),
     path('final_test/', views.final_test, name='final_test'),
     path('final_eye/', views.final_eye, name='final_eye'),
+    path('form/', views.get_form, name='form'),
+    path('api/save-form/', views.save_form , name='api/save-form'),
+    path('hey/', views.hey_txt , name='hey'),
     
 ]
