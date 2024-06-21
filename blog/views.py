@@ -61,12 +61,11 @@ def post_edit(request, pk):
     return render(request, 'blog/post_edit.html', {'form': form})
 
 
-
 def post_publish(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method=='POST':
         post.publish()
-    return redirect('post_list', pk=pk)
+    return redirect('post_detail', pk=pk)
 
 def post_remove(request, pk):
     post = get_object_or_404(Post, pk=pk)
